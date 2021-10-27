@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Child Support",
+    "color": " rgba(255, 189, 62, 1)",
+    "image": "https://i.ibb.co/K726v2w/child-Support-min.png"
+  },
+  {
+    "name": "Refuse Shelter",
+    "color": "rgba(255, 112, 68, 1)",
+    "image": "https://i.ibb.co/S7yCmXy/refuse-Shelter-min.png"
+  },
+  {
+    "name": "Food Charity",
+    "color": "rgba(63, 144, 252, 1) ",
+    "image": "https://i.ibb.co/kyw4Fw6/food-Charity-min.png"
+  },
+  {
+    "name": "Host a clothing swap.",
+    "color": "rgba(66, 31, 207, 1)",
+    "image": "https://i.ibb.co/7SKcvfF/cloth-Swap-min.png"
+  },
+  {
+    "name": "Host a river clean-up.",
+    "color": "rgba(63, 144, 252, 1)",
+    "image": "https://i.ibb.co/PcFH02j/river-Clean-min.png"
+  },
+  {
+    "name": "Clean water for children",
+    "color": "#421FCF",
+    "image": "https://i.ibb.co/PrNcjBZ/clean-Water-min.png"
+  },
+  {
+    "name": "Good education",
+    "color": "#FFBD3E",
+    "image": "https://i.ibb.co/vJW6NvT/good-Education-min.png"
+  },
+  {
+    "name": "New books for children",
+    "color": "#FF7044",
+    "image": "https://i.ibb.co/cxGqbZF/new-Books-min.png"
+  },
+  {
+    "name": "Host a study group.",
+    "color": "#FFBD3E",
+    "image": "https://i.ibb.co/93sg7Q9/study-Group-min.png"
+  },
+  {
+    "name": "Build birdhouses for your neighbors.",
+    "color": "#3F90FC",
+    "image": "https://i.ibb.co/xgW26yn/bird-House-min.png"
+  },
+  {
+    "name": "Organize books at the library.",
+    "color": "#FF7044",
+    "image": "https://i.ibb.co/5j3PwZ7/library-Books-min.png"
+  },
+  {
+    "name": "Give a seminar on driving safety.",
+    "color": "#421FCF",
+    "image": "https://i.ibb.co/frLzcKg/drive-Safety-min.png"
+  },
+  {
+    "name": "Give free music lessons.",
+    "color": "#421FCF",
+    "image": "https://i.ibb.co/tYBtT4b/music-Lessons-min.png"
+  },
+  {
+    "name": "Teach people how to register to vote.",
+    "color": "#FFBD3E",
+    "image": "https://i.ibb.co/724Sjb2/vote-Register-min.png"
+  },
+  {
+    "name": "Clean up your local park.",
+    "color": "#3F90FC",
+    "image": "https://i.ibb.co/ZTZkpLL/clearn-Park-min.png"
+  },
+  {
+    "name": "Give IT help to local adults",
+    "color": "#FF7044",
+    "image": "https://i.ibb.co/4Rj1RRM/ITHelp-min.png"
+  },
+  {
+    "name": "Foster a shelter animal.",
+    "color": "#FFBD3E",
+    "image": "https://i.ibb.co/xHCrfJd/stuffed-Animals-min.png"
+  },
+  {
+    "name": "Babysit during PTA meetings.",
+    "color": "#3F90FC",
+    "image": "https://i.ibb.co/vmV4gRc/baby-Sit-min.png"
+  },
+  {
+    "name": "Collect stuffed animals.",
+    "color": "#FF7044",
+    "image": "https://i.ibb.co/b6LH6H0/animal-Shelter-min.png"
+  },
+  {
+    "name": "Collect school supplies.",
+    "color": "#421FCF",
+    "image": "https://i.ibb.co/fdKWmZX/school-Suffiles-min.png"
+  }
+]
