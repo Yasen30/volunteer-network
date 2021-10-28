@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import Service from "../Service/Service";
-const Services = () => {
-  const [services, setServices] = useState([]);
+import UseEvents from "../../../Hooks/UseEvents";
+import Event from "../Event/Event";
 
-  useEffect(() => {
-    fetch("http://localhost:5000/services")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
+const Events = () => {
+  const [events, setEvents] = UseEvents();
 
   return (
     <div>
@@ -36,8 +32,8 @@ const Services = () => {
         </div>
 
         <Row xs={1} md={2} lg={3} xl={4} className="g-4">
-          {services.map((data) => (
-            <Service data={data} key={data.name}></Service>
+          {events.map((data) => (
+            <Event data={data} key={data.name}></Event>
           ))}
         </Row>
       </section>
@@ -45,4 +41,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Events;

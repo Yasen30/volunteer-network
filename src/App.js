@@ -10,7 +10,8 @@ import Login from "./Compontets/Login/Login";
 import Authprovider from "./Context/Authprovider";
 import AddVolunterr from "./Compontets/AddVolunterrPage/AddVolunterr";
 import PrivateRoute from "./Compontets/PrivateRoute/PrivateRoute";
-import Services from "./Compontets/HomePage/Services/Services";
+import Events from "./Compontets/HomePage/Events/Events";
+import MyEvents from "./Compontets/MyEventPage/MyEvents";
 
 const App = () => {
   return (
@@ -19,10 +20,13 @@ const App = () => {
         <NavBar></NavBar>
         <Switch>
           <Route path="/home">
-            <Services></Services>
+            <Events></Events>
           </Route>
-          <PrivateRoute path="/add">
+          <PrivateRoute path="/resigter-volunteer/:id">
             <AddVolunterr></AddVolunterr>
+          </PrivateRoute>
+          <PrivateRoute path="/my-events">
+            <MyEvents></MyEvents>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

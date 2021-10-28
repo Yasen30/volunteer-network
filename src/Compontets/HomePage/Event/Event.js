@@ -1,22 +1,19 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import UseAuth from "../../../Hooks/UseAuth";
+import { useHistory } from "react-router-dom";
 
-const Service = (props) => {
-  let { name, color, image } = props.data;
-  const { setSelectedService, user } = UseAuth();
+const Event = (props) => {
+  // delcare name color value by props
+  let { name, color, image, _id } = props.data;
   const history = useHistory();
 
-  const handleService = (data) => {
-    data["email"] = user?.email;
-    setSelectedService(data);
-    history.push("/add");
+  const handleService = () => {
+    history.push(`/resigter-volunteer/${_id}`);
   };
   return (
     <Col>
       <Card
-        onClick={() => handleService(props.data)}
+        onClick={handleService}
         className="h-100 text-light text-center border-0 cursor-pointor"
       >
         <Card.Img variant="top" src={image} />
@@ -28,4 +25,4 @@ const Service = (props) => {
   );
 };
 
-export default Service;
+export default Event;

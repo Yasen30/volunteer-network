@@ -13,7 +13,6 @@ firebaseAuth();
 const UseFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedService, setSelectedService] = useState({});
 
   const auth = getAuth();
   //   google sign
@@ -47,8 +46,6 @@ const UseFirebase = () => {
     isLoading,
     setIsLoading,
     logout,
-    selectedService,
-    setSelectedService,
   };
 };
 

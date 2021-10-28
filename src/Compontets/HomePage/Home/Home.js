@@ -1,10 +1,10 @@
 import React from "react";
-import Services from "../Services/Services";
+import Events from "../Events/Events";
 
 const Home = () => {
   return (
     <section>
-      <Services></Services>
+      <Events></Events>
     </section>
   );
 };
