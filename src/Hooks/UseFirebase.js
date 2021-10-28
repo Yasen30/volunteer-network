@@ -13,6 +13,7 @@ firebaseAuth();
 const UseFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedService, setSelectedService] = useState({});
 
   const auth = getAuth();
   //   google sign
@@ -39,7 +40,16 @@ const UseFirebase = () => {
       })
       .catch((error) => {});
   };
-  return { gogleSignIn, user, setUser, isLoading, setIsLoading, logout };
+  return {
+    gogleSignIn,
+    user,
+    setUser,
+    isLoading,
+    setIsLoading,
+    logout,
+    selectedService,
+    setSelectedService,
+  };
 };
 
 export default UseFirebase;
