@@ -12,6 +12,8 @@ import AddVolunterr from "./Compontets/AddVolunterrPage/AddVolunterr";
 import PrivateRoute from "./Compontets/PrivateRoute/PrivateRoute";
 import Events from "./Compontets/HomePage/Events/Events";
 import MyEvents from "./Compontets/MyEventPage/MyEvents";
+import VolunteerResigterList from "./Compontets/Admin/VolunteerResigterList/VolunteerResigterList";
+import AddEvent from "./Compontets/Admin/AddEvent/AddEvent";
 
 const App = () => {
   return (
@@ -22,6 +24,15 @@ const App = () => {
           <Route path="/home">
             <Events></Events>
           </Route>
+          <PrivateRoute path="/admin-pannel/volunteer-resigter-list">
+            <VolunteerResigterList></VolunteerResigterList>
+          </PrivateRoute>
+          <PrivateRoute path="/admin-pannel/add-event">
+            <AddEvent></AddEvent>
+          </PrivateRoute>
+          <PrivateRoute path="/resigter-volunteer/:id">
+            <AddVolunterr></AddVolunterr>
+          </PrivateRoute>
           <PrivateRoute path="/resigter-volunteer/:id">
             <AddVolunterr></AddVolunterr>
           </PrivateRoute>

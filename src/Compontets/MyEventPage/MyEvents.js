@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
+import swal from "sweetalert";
 import UseAuth from "../../Hooks/UseAuth";
 import MyEvent from "./MyEvent";
 
@@ -8,7 +9,7 @@ const MyEvents = () => {
   const { user } = UseAuth();
   //
   useEffect(() => {
-    fetch("http://localhost:5000/my-events")
+    fetch("https://infinite-journey-26479.herokuapp.com/my-events")
       .then((res) => res.json())
       .then((data) => {
         const filterEvents = data.filter((data) => data.email === user?.email);
@@ -19,20 +20,28 @@ const MyEvents = () => {
   //   handle delete function
   const handleDelete = (data) => {
     const id = data._id;
-    const proced = window.confirm("Are Your Want To Delete");
-    if (proced) {
-      fetch(`http://localhost:5000/my-events/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            alert("your Events Delete");
-            const remaing = myEvents.filter((data) => data._id !== id);
-            setMyEvents(remaing);
-          }
-        });
-    }
+    swal({
+      title: "Are you sure Want Cancel this Event",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(`https://infinite-journey-26479.herokuapp.com/my-events/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              swal("Your Event Cancel Delete", {
+                icon: "success",
+              });
+              const remaing = myEvents.filter((data) => data._id !== id);
+              setMyEvents(remaing);
+            }
+          });
+      }
+    });
   };
   return (
     <Container className="my-5">

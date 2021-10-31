@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import UseAuth from "../../Hooks/UseAuth";
 import UseEvents from "../../Hooks/UseEvents";
 import "./AddVolunterr.css";
@@ -31,8 +32,7 @@ const AddVolunterr = () => {
       date: data?.date,
       eventName: data?.eventName,
     };
-    console.log(doc);
-    fetch("http://localhost:5000/my-event", {
+    fetch("https://infinite-journey-26479.herokuapp.com/my-event", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,8 +42,10 @@ const AddVolunterr = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("resigter sucessfully");
-          history.push("/home");
+          swal("Your Volunteer is Added", {
+            icon: "success",
+          });
+          history.push("/my-events");
         }
       });
   };
@@ -94,13 +96,16 @@ const AddVolunterr = () => {
           This field is required
         </span>
       )}
-      <input
-        readOnly
-        defaultValue={findEvents?.name}
-        placeholder="Enter Your Event Name"
-        className="input w-75 "
-        {...register("eventName", { required: true })}
-      />
+      {findEvents?.name && (
+        <input
+          readOnly
+          defaultValue={findEvents?.name}
+          placeholder="Enter Your Event Name"
+          className="input w-75 "
+          {...register("eventName", { required: true })}
+        />
+      )}
+
       <br />
       <input className="btn btn-primary" type="submit" />
     </form>

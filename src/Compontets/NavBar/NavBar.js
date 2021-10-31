@@ -34,10 +34,22 @@ const NavBar = () => {
             </LinkContainer>
             {user?.email ? (
               <>
-                <span>{user?.displayName}</span>
-                <button onClick={logout} className="btn btn-primary">
-                  Log out
-                </button>
+                <div className="d-lg-flex align-items-center">
+                  <span className="d-block d-sm-block d-lg-inline text-danger fw-bold">
+                    {user?.displayName}
+                  </span>
+                  <button
+                    onClick={logout}
+                    className="btn btn-primary mt-3 mt-lg-0"
+                  >
+                    Log out
+                  </button>
+                </div>
+                <LinkContainer to="/admin-pannel/volunteer-resigter-list">
+                  <button className="btn btn-danger  mx-3 mt-3 mt-lg-0">
+                    Admin
+                  </button>
+                </LinkContainer>
               </>
             ) : (
               <LinkContainer to="/login">

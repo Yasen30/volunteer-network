@@ -1,0 +1,10 @@
+.table-head {
+  background: rgba(245, 246, 250, 1);
+}
+.add-nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  display: inline-block;
+}
