@@ -1,0 +1,11 @@
+.cursor-pointor {
+  cursor: pointer;
+}
+.footer-nav-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  list-style: none;
+  margin-top: 15px !important;
+}

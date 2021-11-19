@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SideNavBar = () => {
   return (
     <>
-      <ul className="list-unstyled">
+      <ul className="list-unstyled h-100">
         <li>
           <Link
             className="add-nav-link my-3"

@@ -10,9 +10,8 @@ const AddVolunterr = () => {
   const { user } = UseAuth();
   // get value form useparams
   const { id } = useParams();
-  const [events] = UseEvents();
+  const { events } = UseEvents();
   const findEvents = events.find((data) => data._id == id);
-  // console.log(findEvents);
   // delcare use history
   const history = useHistory();
   // use form
@@ -32,7 +31,7 @@ const AddVolunterr = () => {
       date: data?.date,
       eventName: data?.eventName,
     };
-    fetch("https://infinite-journey-26479.herokuapp.com/my-event", {
+    fetch("https://infinite-journey-26479.herokuapp.com/resigter-events", {
       method: "POST",
       headers: {
         "content-type": "application/json",

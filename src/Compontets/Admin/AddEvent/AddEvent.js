@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import SideNavBar from "../SideNavBar";
 
-const VolunteerAddEvent = () => {
+const AddEvent = () => {
   const onSubmit = (data) => {
     axios
       .post(`https://infinite-journey-26479.herokuapp.com/events`, data)
@@ -82,4 +82,4 @@ const VolunteerAddEvent = () => {
   );
 };
 
-export default VolunteerAddEvent;
+export default AddEvent;

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import UseEvents from "../../../Hooks/UseEvents";
+import LoadingSpiner from "../../Shared/LoadingSpiner/LoadingSpiner";
 import Event from "../Event/Event";
 
 const Events = () => {
-  const [events, setEvents] = UseEvents();
+  const { events, loading } = UseEvents();
 
   return (
     <div>
@@ -30,7 +31,9 @@ const Events = () => {
             </div>
           </div>
         </div>
-
+        <div>
+          <LoadingSpiner loading={loading}></LoadingSpiner>
+        </div>
         <Row xs={1} md={2} lg={3} xl={4} className="g-4">
           {events.map((data) => (
             <Event data={data} key={data.name}></Event>

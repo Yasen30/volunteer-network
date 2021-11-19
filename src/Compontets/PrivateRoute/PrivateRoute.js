@@ -1,11 +1,12 @@
 import React from "react";
 import { Redirect, Route } from "react-router";
 import UseAuth from "../../Hooks/UseAuth";
+import LoadingSpiner from "../Shared/LoadingSpiner/LoadingSpiner";
 
 const PrivateRoute = ({ children, ...rest }) => {
   let { user, isLoading } = UseAuth();
   if (isLoading) {
-    return <h1>This is Loading</h1>;
+    return <LoadingSpiner loading={isLoading}></LoadingSpiner>;
   }
   return (
     <Route

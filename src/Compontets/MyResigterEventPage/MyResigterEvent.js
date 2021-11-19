@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
-import "./MyEvent.css";
-const MyEvent = (props) => {
+import "./MyResigterEvents.css";
+
+const MyResigterEvent = (props) => {
   const { eventName, image, date } = props.data;
-  console.log(props.data);
   return (
     <Col>
       <Card className="border-0 shadow-lg h-100 p-4 flex-md-row">
@@ -35,4 +35,4 @@ const MyEvent = (props) => {
   );
 };
 
-export default MyEvent;
+export default MyResigterEvent;

@@ -3,17 +3,22 @@ import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import { Container, Row, Col } from "react-bootstrap";
 import swal from "sweetalert";
-import "./VolunteerResigterList.css";
+import "./AllVolunterrResigterList.css";
 import SideNavBar from "../SideNavBar";
+import LoadingSpiner from "../../Shared/LoadingSpiner/LoadingSpiner";
 
-const VolunteerResigterList = () => {
+const AllVolunterrResigterList = () => {
   // use state
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
   // useeffect
   useEffect(() => {
-    fetch("https://infinite-journey-26479.herokuapp.com/my-events")
+    fetch("https://infinite-journey-26479.herokuapp.com/resigter-events")
       .then((res) => res.json())
-      .then((data) => setList(data));
+      .then((data) => {
+        setLoading(false);
+        setList(data);
+      });
   }, []);
   // handle delete function
   const handleDelete = (id) => {
@@ -24,9 +29,12 @@ const VolunteerResigterList = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://infinite-journey-26479.herokuapp.com/my-events/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://infinite-journey-26479.herokuapp.com/resigter-events/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.acknowledged) {
@@ -89,4 +97,4 @@ const VolunteerResigterList = () => {
   );
 };
 
-export default VolunteerResigterList;
+export default AllVolunterrResigterList;
