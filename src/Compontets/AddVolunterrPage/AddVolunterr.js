@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import UseAuth from "../../Hooks/UseAuth";
 import UseEvents from "../../Hooks/UseEvents";
@@ -12,13 +12,12 @@ const AddVolunterr = () => {
   const { id } = useParams();
   const { events } = UseEvents();
   const findEvents = events.find((data) => data._id == id);
-  // delcare use history
-  const history = useHistory();
+  // delcare use navigate
+  const navigate = useNavigate();
   // use form
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -44,7 +43,7 @@ const AddVolunterr = () => {
           swal("Your Volunteer is Added", {
             icon: "success",
           });
-          history.push("/my-events");
+          navigate("/my-events");
         }
       });
   };

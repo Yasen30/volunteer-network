@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import UseAuth from "../../Hooks/UseAuth";
 import "./Login.css";
 
 const Login = () => {
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const redirectUrl = location.state?.from?.pathname || "/home";
   const { gogleSignIn, user, setUser, isLoading, setIsLoading } = UseAuth();
 
@@ -14,7 +14,7 @@ const Login = () => {
     gogleSignIn()
       .then((res) => {
         setUser(res.user);
-        history.push(redirectUrl);
+        navigate(redirectUrl);
       })
       .catch((error) => {
         // Handle Errors here.

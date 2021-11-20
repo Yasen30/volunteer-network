@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Event = (props) => {
   // delcare name color value by props
   let { name, color, image, _id } = props.data;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleService = () => {
-    history.push(`/resigter-volunteer/${_id}`);
+    navigate(`/resigter-volunteer/${_id}`);
   };
   return (
     <Col>

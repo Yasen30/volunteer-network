@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import UseAuth from "../../../Hooks/UseAuth";
 
@@ -8,30 +8,30 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <LinkContainer to="/home">
-          <Navbar.Brand href="home">
-            <img
-              height="50"
-              src="https://i.ibb.co/6Xstc3L/Group-1329.png"
-              alt=""
-            />
-          </Navbar.Brand>
-        </LinkContainer>
+        <Navbar.Brand href="home">
+          <img
+            height="50"
+            src="https://i.ibb.co/6Xstc3L/Group-1329.png"
+            alt=""
+          />
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            <LinkContainer to="/home">
-              <Nav.Link>Home</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/donations">
-              <Nav.Link>Dontaions</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/my-events">
-              <Nav.Link>Events</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/blog">
-              <Nav.Link>Blog</Nav.Link>
-            </LinkContainer>
+            <Nav.Link as={Link} to="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/my-events">
+              My Events
+            </Nav.Link>
+            <Nav.Link as={Link} to="/donations">
+              Dontaions
+            </Nav.Link>
+            <Nav.Link as={Link} to="/blog">
+              Blog
+            </Nav.Link>
+
             {user?.email ? (
               <>
                 <div className="d-lg-flex align-items-center">
@@ -45,18 +45,17 @@ const NavBar = () => {
                     Log out
                   </button>
                 </div>
-                <LinkContainer to="/admin-pannel/volunteer-resigter-list">
+
+                <Nav.Link as={Link} to="/admin-pannel/volunteer-resigter-list">
                   <button className="btn btn-danger  mx-3 mt-3 mt-lg-0">
                     Admin
                   </button>
-                </LinkContainer>
+                </Nav.Link>
               </>
             ) : (
-              <LinkContainer to="/login">
-                <Nav.Link>
-                  <button className="btn btn-primary">Login</button>
-                </Nav.Link>
-              </LinkContainer>
+              <Nav.Link>
+                <button className="btn btn-primary">Login</button>
+              </Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
